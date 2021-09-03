@@ -10,6 +10,7 @@ function App() {
 
   const fetchData = async () => {
     try{
+    setLoading(true);
     const resp = await fetch(url);
     const data = await resp.json();
     setLoading(false);
@@ -32,6 +33,17 @@ function App() {
 
   if(loading === true){
     return <Loading /> }
+
+  if(tours.length === 0){
+    return (
+      <main>
+        <div className="title">
+          <h2>No Tours Left To Show!</h2>
+        <button  className='btn' onClick={() => fetchData()}>Refresh!</button>
+        </div>
+      </main>
+    );
+  }
 
   return (<main>
     <Tours tours={tours} removeTour = {removeTour}/>
