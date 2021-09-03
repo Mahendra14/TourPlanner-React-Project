@@ -25,11 +25,16 @@ function App() {
     fetchData();
   }, [])
 
+  const removeTour = (id) =>{
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  }
+
   if(loading === true){
     return <Loading /> }
 
   return (<main>
-    <Tours tours={tours}/>
+    <Tours tours={tours} removeTour = {removeTour}/>
   </main>);
 }
 
