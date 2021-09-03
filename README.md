@@ -1,2 +1,15 @@
-# TourPlanner-React-Project
-A React Project which will show different set of tours available and lets user navigate in them.
+## A React Application which can be used for Tour Planning.
+
+
+
+
+
+
+
+
+
+
+
+
+The Api used to fetch the data is :
+https://course-api.com/react-tours-project
